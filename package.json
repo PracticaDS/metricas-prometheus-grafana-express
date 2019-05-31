@@ -1,0 +1,40 @@
+{
+  "name": "2019-todo-list-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --exec babel-node -- index",
+    "test": "jest --runInBand --watch",
+    "test:ci": "jest --runInBand --ci --forceExit",
+    "lint": "eslint ./src/**/*.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.2",
+    "@types/express": "^4.16.1",
+    "@types/jest": "^24.0.11",
+    "@types/lodash": "^4.14.123",
+    "@types/supertest": "^2.0.7",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.5.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.5.1",
+    "eslint-plugin-node": "^9.0.1",
+    "jest": "^24.5.0",
+    "jest-cli": "^24.5.0",
+    "nodemon": "^1.19.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "morgan": "^1.9.1",
+    "prom-client": "^11.3.0"
+  }
+}

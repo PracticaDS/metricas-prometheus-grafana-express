@@ -1,0 +1,37 @@
+version: '2'
+services:
+  prom-conf:
+    build: prom-conf
+    image: prom-conf
+    volumes:
+    - /etc/prom-conf/
+    tty: true
+  grafana:
+    image: grafana/grafana:4.4.1
+    tty: true
+    volumes_from:
+    - graf-db
+    ports:
+    - 3000:3000/tcp
+  prometheus:
+    image: prom/prometheus:v1.7.1
+    volumes:
+    - /data/
+    tty: true
+    volumes_from:
+    - prom-conf
+    ports:
+    - 9090:9090/tcp
+    command:
+    - -config.file=/etc/prom-conf/prometheus.yml
+    - -storage.local.path=/prometheus
+    - -web.console.libraries=/etc/prometheus/console_libraries
+    - -web.console.templates=/etc/prometheus/consoles
+  graf-db:
+    build: graf-db
+    image: graf-db
+    volumes:
+    - /var/lib/grafana/
+    tty: true
+    command:
+    - cat

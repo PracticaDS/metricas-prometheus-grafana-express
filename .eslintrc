@@ -1,0 +1,20 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "node": true
+  },
+  "plugins": [
+    "import",
+    "jest"
+  ],
+  "extends": [
+    "airbnb-base",
+    "plugin:jest/recommended"
+  ],
+  "rules": {
+    "semi": 0,
+    "padded-blocks": 0,
+    "comma-dangle": 0,
+    "function-paren-newline": 0
+  }
+ }
